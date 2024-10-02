@@ -116,12 +116,9 @@ def print_trainable_parameters(model):
 def check_model_parameters(model_or_params, print_details=False):
     device_map = {}
 
-    # 检查输入类型并相应地获取参数
     if hasattr(model_or_params, 'named_parameters'):
-        # 如果输入是模型对象
         param_iterator = model_or_params.named_parameters()
     elif isinstance(model_or_params, dict):
-        # 如果输入是参数字典
         param_iterator = model_or_params.items()
     else:
         raise ValueError("Input must be a model or a dictionary of parameters")
