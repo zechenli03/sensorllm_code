@@ -57,7 +57,7 @@ class DataArguments:
         metadata={"help": "Path to the eval QA data."},
     )
     shuffle: bool = field(default=True, metadata={"help": "Whether to shuffle data."})
-    ignore_qa_types: List[str] = field(default_factory=lambda: ["sub_trend_no_val"])
+    ignore_qa_types: List[str] = field(default_factory=lambda: ["trend"])
     preprocess_type: str = field(default='Q',
                                  metadata={"help": "Q or Q+cot."})
     preprocess_type_eval: str = field(default='Q+cot',
